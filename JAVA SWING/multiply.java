@@ -12,34 +12,42 @@ import java.awt.event.ActionListener;
 
         //UI
          l1 = new JLabel("First Number");
-         l1.setBounds(0,0,0,0);
+         
+        //  l1.setBounds(0,0,0,0);
         
         t1 = new JTextField();
-        t1.setBounds(90,280,100,20);
+        // t1.setBounds(90,280,100,20);
 
         l2 = new JLabel("Second Number:");
-        l2.setBounds(0,350,120,30);
+        // l2.setBounds(0,350,120,30);
 
         t2 = new JTextField();
-        t2.setBounds(150, 350,150,30);
+        // t2.setBounds(150, 350,150,30);
 
         t3 = new JTextField();
-        t3.setBounds(0,400,150,30);
+        // t3.setBounds(0,400,150,30);
 
         b1 = new JButton("Result");
-        b1.setBounds(10,450,150,40);
+        // b1.setBounds(10,450,150,40);
+        
+       
+        
+        
+        
+        add(l1);
+        add(t1);
+        add(l2);
+        add(t2);
         add(b1);
         add(t3);
-        add(t2);
-        add(l2);
-        add(t1);
-        add(l1);
+        
 
         b1.addActionListener(this);
 
         
          
          setSize(800,600);
+         setLayout(new GridLayout(5,2));
          setVisible(true);
 
      }

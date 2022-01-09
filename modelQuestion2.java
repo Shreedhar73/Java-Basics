@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
 public class modelQuestion2 extends JFrame{
-    
     JLabel ul,pl;
     JTextField uT,pT;
     JButton b1,b2;
@@ -42,9 +41,10 @@ public class modelQuestion2 extends JFrame{
 
 
             //
-            if(e.getKeyChar() == "l"){ 
+            if(e.getKeyChar() == 'l'){ 
 
             try {
+                
                 String driver = "com.mysql.cj.jdbc.Driver";
                 String url = "jdbc:mysql://localhost:3306/db1";
                 String user_name = "root";
@@ -58,11 +58,13 @@ public class modelQuestion2 extends JFrame{
                 String query = "Select * from Person";
                 Statement stm = conn.createStatement(query);
                 ResultSet rs = stm.executeQuery(query);
+                String uid;
+                String pwd;
                 while(rs.next()){
-                    String uid = rs.getString(1);
-                    String pwd = rs.getString(2);
+                     uid = rs.getString(1);
+                     pwd = rs.getString(2);
                 }
-                if((String.valueOf(uT) == uid)&&String.valueOf(pT) == pwd){
+                if((String.valueOf(uT) == uid)&&(String.valueOf(pT) == pwd)){
                     System.out.println("Login Successful");
 
                 }else{
@@ -70,7 +72,7 @@ public class modelQuestion2 extends JFrame{
                 }
 
                 
-            }catch (Exception x){
+            }catch (SqlException x){
                 System.out.println(x);
 
 
@@ -78,11 +80,11 @@ public class modelQuestion2 extends JFrame{
         
         }
             
-            if(e.getKeyChar() == "c"){
+            if(e.getKeyChar() == 'c'){
                 
-              ut.setText("");
-              pt.setText("");
-              ut.setFocus();
+              uT.setText("");
+              pT.setText("");
+              uT.setFocus();
                 
                 }
                 
